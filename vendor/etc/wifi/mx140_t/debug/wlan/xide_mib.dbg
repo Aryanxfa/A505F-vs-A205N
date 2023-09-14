@@ -309,6 +309,7 @@ Element unifiChannelAnnouncementCount  BasicType integer  BERType integer  OID 1
 Element unifiRATestStoredSA  BasicType string  BERType string  OID 1.2.3.1.2585  Access read_write  PSID 2585  Default "0x00000000"  BFType var  BFAccess RW
 Element unifiRATestStoreFrame  BasicType string  BERType string  OID 1.2.3.1.2586  Access read_write  PSID 2586  Default "0x00000000"  BFType var  BFAccess RW
 Element dot11TDLSPeerUAPSDBufferSTAActivated  BasicType integer  BERType string  OID 1.2.3.1.2587  Access read_write  PSID 2587  Default 1  BFType bool  BFAccess RW
+Element unifiArpOutstandingMax  BasicType integer  BERType integer  OID 1.2.3.1.2590  Access read_write  PSID 2590  Default 32  BFType uint16  BFAccess RW
 Element unifiP2PLegacyProbeResponseActivated  BasicType integer  BERType string  OID 1.2.3.1.2599  Access read_write  PSID 2599  Default 1  BFType bool  BFAccess RW
 Element unifiProbeResponseLifetimeP2P  BasicType integer  BERType integer  OID 1.2.3.1.2600  Access read_write  PSID 2600  Default 500  BFType uint16  BFAccess RW
 Element unifiStaChannelSwitchSlowApActivated  BasicType integer  BERType string  OID 1.2.3.1.2601  Access read_write  PSID 2601  Default 0  BFType bool  BFAccess RW
@@ -318,6 +319,7 @@ Element unifiStaChannelSwitchSlowApProcedureTimeoutIncrement  BasicType integer 
 Element unifiMLMEScanMaxAerials  BasicType integer  BERType integer  OID 1.2.3.1.2607  Access read_write  Min 1  PSID 2607  Default 1  BFType uint16  BFAccess RW
 Element unifiIncludePMKIDForPSK  BasicType integer  BERType string  OID 1.2.3.1.2610  Access read_write  PSID 2610  Default 0  BFType bool  BFAccess RW
 Element unifiRoamBSSCUTriggerFrequency  BasicType integer  BERType integer  OID 1.2.3.1.2641  Access read_write  Min 0  Max 100  PSID 2641  Default 10  BFType uint16  BFAccess RW
+Element unifiSecuritySkipAllZeroesCheck  BasicType integer  BERType string  OID 1.2.3.1.2648  Access read_write  PSID 2648  Default 1  BFType bool  BFAccess RW
 Element unifiAPFActivated  BasicType integer  BERType string  OID 1.2.3.1.2650  Access read_write  PSID 2650  Default 0  BFType bool  BFAccess RW
 Element unifiAPFVersion  BasicType integer  BERType integer  OID 1.2.3.1.2651  Access read_write  PSID 2651  Default 4  BFType uint16  BFAccess RW
 Element unifiAPFMaxSize  BasicType integer  BERType integer  OID 1.2.3.1.2652  Access read_only  PSID 2652  Default 1024  BFType uint16  BFAccess RO
@@ -433,7 +435,7 @@ Element unifiTPCMinPower5G  BasicType integer  BERType integer  OID 1.2.3.1.6025
 Element unifiTPCUseAfterConnectRsp  BasicType integer  BERType string  OID 1.2.3.1.6027  Access read_write  PSID 6027  Default 1  BFType bool  BFAccess RW
 Element unifiRadioLpRxRssiThresholdLower  BasicType integer  BERType integer  OID 1.2.3.1.6028  Access read_write  Min -128  Max 127  PSID 6028  Default -75  BFType int16  BFAccess RW
 Element unifiRadioLpRxRssiThresholdUpper  BasicType integer  BERType integer  OID 1.2.3.1.6029  Access read_write  Min -128  Max 127  PSID 6029  Default -65  BFType int16  BFAccess RW
-Element unifiTestTxPowerEnable  BasicType integer  BERType integer  OID 1.2.3.1.6032  Access read_write  PSID 6032  Default 0x03DD  BFType uint16  BFAccess RW
+Element unifiTestTxPowerEnable  BasicType integer  BERType integer  OID 1.2.3.1.6032  Access read_write  PSID 6032  Default 0x03DD  SetFunction mlmetesttxpowerenable  BFType uint16  BFAccess RW
 Element unifiLteCoexMaxPowerRSSIThreshold  BasicType integer  BERType integer  OID 1.2.3.1.6033  Access read_write  PSID 6033  Default -55  BFType int16  BFAccess RW
 Element unifiLteCoexMinPowerRSSIThreshold  BasicType integer  BERType integer  OID 1.2.3.1.6034  Access read_write  PSID 6034  Default -45  BFType int16  BFAccess RW
 Element unifiLteCoexPowerReduction  BasicType integer  BERType integer  OID 1.2.3.1.6035  Access read_write  Min 0  Max 127  PSID 6035  Default 24  BFType uint16  BFAccess RW
@@ -492,6 +494,7 @@ Element hutsReadWriteTableInt16Row  BasicType integer  BERType integer  OID 1.2.
 Element hutsReadWriteTableOctetStringRow  BasicType string  BERType string  OID 1.2.3.11.1.2.3.1.6104  Access read_only  Min 6  Max 73  PSID 6104  DefaultIX1 1:0x53:0x54:0x70:0x73:0x74:0x75:0x7A:0x7B:0x7C:0x7D:0x7E:0x7F:0x80:0x81:0x82  DefaultIX1 2:0x01:0x02:0x03:0x05:0x06:0x07:0x08:0x09:0x0A:0x10:0x11:0x80:0x81:0x82  DefaultIX1 3:0x01:0x03:0x05:0x16:0x17:0x19:0x1A:0x1B:0x1C:0x1E:0x1F:0x20:0x21:0x80:0x81:0x82  DefaultIX1 4:0x01:0x02:0x03:0x04:0x05:0x06:0x20:0x21:0x24:0x25:0x26:0x29:0x2A:0x2B:0x3A:0x80:0x81:0x82  ElementTable hutsReadWriteTableOctetStringTable  ElementTableIndices hutsReadWriteTableOctetString  BFType var  BFAccess RO
 Element unifiACRetries  BasicType integer  BERType integer_unsigned32  OID 1.2.3.12.1.2.3.1.2229  Access read_only  PSID 2229  GetPerVifFunction mibllsstatsget  ElementTable unifiAcTxConfirmTable  ElementTableIndices unifiAccessClassIndex  BFType uint32  BFAccess RO
 Element unifiTxDataConfirm  BasicType integer  BERType string  OID 1.2.3.12.1.2.3.1.2253  Access read_write  PSID 2253  Default 0  SetFunction mibtxdatacfmset  ElementTable unifiAcTxConfirmTable  ElementTableIndices unifiAccessClassIndex  BFType bool  BFAccess RW
+Element unifiACNoAcks  BasicType integer  BERType integer_unsigned32  OID 1.2.3.12.1.2.3.1.2328  Access read_only  PSID 2328  GetPerVifFunction mibllsstatsget  ElementTable unifiAcTxConfirmTable  ElementTableIndices unifiAccessClassIndex  BFType uint32  BFAccess RO
 Element unifiAgcThresholds  BasicType string  BERType string  OID 1.2.3.13.1.2.3.1.5095  Access read_write  Min 0  Max 255  PSID 5095  SetFunction mibricechangefsmparams  ElementTable unifiAgcThresholdsTable  ElementTableIndices unifiAgcThresholdsTableIndex  BFType var  BFAccess RW
 Element unifiBaConfig  BasicType integer  BERType integer_unsigned32  OID 1.2.3.14.1.2.3.1.2225  Access read_write  PSID 2225  DefaultIX1 1:0x3fff00  DefaultIX1 2:0x3fff01  DefaultIX1 3:0x3fff01  DefaultIX1 4:0x3fff00  ElementTable unifiBaConfigTable  ElementTableIndices unifiAccessClassIndex  BFType uint32  BFAccess RW
 Element unifiCCACSThresh  BasicType integer  BERType integer  OID 1.2.3.15.1.2.3.1.5101  Access read_write  PSID 5101  GetFunction mibhalmacmodemgenericget  SetFunction mibhalmacmodemgenericset  ElementTable unifiCCACSThreshTable  ElementTableIndices unifiSisoMimoTableIndex  BFType uint16  BFAccess RW

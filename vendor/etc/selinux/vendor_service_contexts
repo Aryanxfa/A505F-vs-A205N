@@ -16,6 +16,8 @@ vendor.samsung.hardware.hyper.ISehHyPer/default      u:object_r:hal_hyper_servic
 # https://mobilerndhub.sec.samsung.net/its/browse/SEANDROID-4208
 vendor.samsung.hardware.uwb@1.0::ISehUwb/default      u:object_r:hal_uwb_service:s0
 
+# https://mobilerndhub.sec.samsung.net/its/browse/SEANDROID-8152
+vendor.samsung.hardware.sysinput-default			u:object_r:hal_sysinput_service:s0
 #line 1 "device/samsung/sepolicy/common/service_contexts"
 # SEC_REMOVE : This is not AIDL hal service 
 # sims       u:object_r:sims_service:s0

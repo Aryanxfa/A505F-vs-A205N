@@ -31,7 +31,6 @@
 	<path name="gain-media-speaker-headset">
 		<ctl name="DAC1 Playback Volume" value="140"/>
 		<ctl name="Headphone Playback Volume" value="17"/>
-		<ctl name="Disable NG2" value="0"/>
 		<ctl name="HPO Playback Switch" value="1"/>
 	</path>
 
@@ -630,7 +629,7 @@
 
 	<path name="gain-fm_radio-headset">
 		<ctl name="DAC1 Playback Volume" value="174"/>
-		<ctl name="Headphone Playback Volume" value="26"/>
+		<ctl name="Headphone Playback Volume" value="25"/>
 		<ctl name="HPO Playback Switch" value="1"/>
 	</path>
 

@@ -8,6 +8,7 @@ persist.sys.usb.config=mtp
 ro.zygote=zygote64_32
 ro.logd.size.stats=64K
 log.tag.stats_log=I
+ro.vendor.multisim.simslotcount=1
 ro.radio.noril=no
 ro.vendor.epdg.support=true
 ro.bionic.arch=arm64

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata_list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="HydraMeta.xsd">
-    <metadata version="498125902" subsystem_name="wlan" subsystem_layer="fw" subsystem_id="2">
+    <metadata version="498219603" subsystem_name="wlan" subsystem_layer="fw" subsystem_id="2">
         <source_control id="$Id$" time="$DateTime$" change="$Change$" author="$Author$" />
         <enum_def enum_name="unifiCSROnlyMIBShield">
             <enum_entry enum_label="open" enum_value="1" />
@@ -1041,6 +1041,9 @@
             <description_user>Test only: Bitfield to enable Control Plane Tx Power processing. </description_user>
             <type>uint16</type>
             <default>0x03DD</default>
+            <function_list>
+                <function type="set" function_name="mlmetesttxpowerenable"></function>
+            </function_list>
             <nature>hardware</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiUserSetTxpowerLevel" psid="6021">
@@ -1094,61 +1097,82 @@
             <nature>software</nature>
         </config_element>
         <config_element name="unifiTPCMaxPowerRSSIThreshold" psid="6022">
-            <description_user>Below the (dBm) threshold, switch to the max power allowed by regulatory, if it has been previously reduced due to unifiTPCMinPowerRSSIThreshold.</description_user>
+            <description_user>Below the (dBm) threshold, switch to the max power allowed by regulatory, 
+                if it has been previously reduced due to unifiTPCMinPowerRSSIThreshold.
+                This value is read only once when an interface is added.</description_user>
             <type>int16</type>
             <default>-55</default>
             <nature>software</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiTPCMinPowerRSSIThreshold" psid="6023">
-            <description_user>Above the (dBm) threshold, switch to the minimum hardware supported - capped by unifiTPCMinPower2G/unifiTPCMinPower5G. A Zero value reverts the power to a default state.</description_user>
+        <description_user>Above the (dBm) threshold, switch to the minimum hardware supported - capped
+                    by unifiTPCMinPower2G/unifiTPCMinPower5G. A Zero value reverts the power to a default state.
+                    This value is read only once when an interface is added.</description_user>
             <type>int16</type>
             <default>-45</default>
             <nature>software</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiTPCMinPower2G" psid="6024">
-            <description_user>Minimum power for 2.4GHz SISO interface when RSSI is above unifiTPCMinPowerRSSIThreshold (quarter dbm). Should be greater than dot11PowerCapabilityMinImplemented.</description_user>
+        <description_user>Minimum power for 2.4GHz SISO interface when RSSI is above 
+                    unifiTPCMinPowerRSSIThreshold (quarter dbm). Should be greater than dot11PowerCapabilityMinImplemented.
+                    This value is read only once when an interface is added.</description_user>
             <type>int16</type>
             <default>52</default>
             <nature>software</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiTPCMinPower2GMIMO" psid="6011">
-            <description_user>Minimum power for 2.4GHz MIMO interface when RSSI is above unifiTPCMinPowerRSSIThreshold (quarter dbm). Should be greater than dot11PowerCapabilityMinImplemented.</description_user>
+        <description_user>Minimum power for 2.4GHz MIMO interface when RSSI is above 
+                    unifiTPCMinPowerRSSIThreshold (quarter dbm). Should be greater than dot11PowerCapabilityMinImplemented.
+                    This value is read only once when an interface is added.</description_user>
             <type>int16</type>
             <default>52</default>
             <nature>software</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiTPCMinPower5G" psid="6025">
-            <description_user>Minimum power for 5 GHz SISO interface when RSSI is above unifiTPCMinPowerRSSIThreshold (quarter dbm). Should be greater than dot11PowerCapabilityMinImplemented.</description_user>
+        <description_user>Minimum power for 5 GHz SISO interface when RSSI is above 
+                    unifiTPCMinPowerRSSIThreshold (quarter dbm). Should be greater than dot11PowerCapabilityMinImplemented.
+                    This value is read only once when an interface is added.</description_user>
             <type>int16</type>
             <default>40</default>
             <nature>software</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiTPCMinPower5GMIMO" psid="6012">
-            <description_user>Minimum power for 5 GHz MIMO interface when RSSI is above unifiTPCMinPowerRSSIThreshold (quarter dbm). Should be greater than dot11PowerCapabilityMinImplemented.</description_user>
+        <description_user>Minimum power for 5 GHz MIMO interface when RSSI is above 
+                    unifiTPCMinPowerRSSIThreshold (quarter dbm). Should be greater than 
+                    dot11PowerCapabilityMinImplemented.This value is read only once when 
+                    an interface is added.</description_user>
             <type>int16</type>
             <default>52</default>
             <nature>software</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiTPCUseAfterConnectRsp" psid="6027">
-            <description_user>Use TPC only after MlmeConnect_Rsp has been received from the Host i.e. not during initial connection exchanges (EAPOL/DHCP operation) as RSSI readings might be inaccurate.</description_user>
+        <description_user>Use TPC only after MlmeConnect_Rsp has been received from the Host i.e. not
+		during initial connection exchanges (EAPOL/DHCP operation) as RSSI readings might be
+                inaccurate.This value is read only once when an interface is added</description_user>
             <type>boolean</type>
             <default>true</default>
             <nature>software</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiLteCoexMaxPowerRSSIThreshold" psid="6033">
-            <description_user>Below this (dBm) threshold, switch to max power allowed by regulatory, if it has been previously reduced due to unifiTPCMinPowerRSSIThreshold.</description_user>
+        <description_user>Below this (dBm) threshold, switch to max power allowed by regulatory,
+               if it has been previously reduced due to unifiTPCMinPowerRSSIThreshold.This value
+         	    is read only once when an interface is added.</description_user>
             <type>int16</type>
             <default>-55</default>
             <nature>software</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiLteCoexMinPowerRSSIThreshold" psid="6034">
-            <description_user>Above this(dBm) threshold, switch to minimum hardware supported - capped by unifiTPCMinPower2G/unifiTPCMinPower5G. Zero reverts the power to its default state.</description_user>
+        <description_user>Above this(dBm) threshold, switch to minimum hardware supported - capped
+                    by unifiTPCMinPower2G/unifiTPCMinPower5G. Zero reverts the power to its default state.
+                    This value is read only once when an interface is added.</description_user>
             <type>int16</type>
             <default>-45</default>
             <nature>software</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiLteCoexPowerReduction" psid="6035">
-            <description_user>When LTE Coex Power Reduction provisions are met, impose a power cap of the regulatory domain less the amount specified by this MIB (quarter dB)</description_user>
+       <description_user>When LTE Coex Power Reduction provisions are met, impose a power cap of the
+                    regulatory domain less the amount specified by this MIB (quarter dB)This value is read only 
+                    once when an interface is added.</description_user>
             <range_min>0</range_min><range_max>127</range_max><default>24</default>
             <type>uint16</type>
             <nature>software</nature>
@@ -1560,43 +1584,50 @@
             <nature>software</nature><module>macrame</module>
         </config_element>
         <config_element name="unifiMLMESTAKeepAliveFailure" psid="2842">
-            <description_user>Link lost by keep alive failure. 0 = Disabled. This is required by MCD.</description_user>
+        <description_user>Link lost by keep alive failure. 0 = Disabled. This is required by MCD.This value 
+                    is read only once when an interface is added.</description_user>
             <type>boolean</type>
             <default>false</default>
             <nature>software</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiMLMESTAKeepAliveTimeout" psid="2502">
-            <description_user>Golden Certification MIB don't delete, change PSID or name: Timeout before disconnecting in seconds. 0 = Disabled. Capped to greater than 6 seconds.</description_user>
+        <description_user>Golden Certification MIB don't delete, change PSID or name: Timeout before disconnecting in seconds.
+                   0 = Disabled. Capped to greater than 6 seconds.This value is read only once when an interface is added.</description_user>
             <type>uint16</type>
             <range_max>2147</range_max><default>30</default>
             <nature>software</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiMLMEAPKeepAliveTimeout" psid="2503">
-            <description_user>Timeout before disconnecting in seconds. 0 = Disabled. Capped to greater than 6 seconds.</description_user>
+        <description_user>Timeout before disconnecting in seconds. 0 = Disabled. Capped to greater than 6 seconds.This value 
+                  is read only once when an interface is added.</description_user>
             <type>uint16</type>
             <range_max>2147</range_max><default>10</default>
             <nature>software</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiMLMEGOKeepAliveTimeout" psid="2504">
-            <description_user>Timeout before disconnecting in seconds. 0 = Disabled. Capped to greater than 6 seconds.</description_user>
+        <description_user>Timeout before disconnecting in seconds. 0 = Disabled. Capped to greater than 6 seconds.This value 
+                    is read only once when an interface is added.</description_user>
             <type>uint16</type>
             <range_max>2147</range_max><default>10</default>
             <nature>software</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiMLMESTAKeepAliveTimeoutCheck" psid="2485">
-            <description_user>DO NOT SET TO A VALUE HIGHER THAN THE TIMEOUT. How long before keepalive timeout to start polling, in seconds. </description_user>
+        <description_user>DO NOT SET TO A VALUE HIGHER THAN THE TIMEOUT. How long before keepalive timeout to start polling, in seconds.
+                    This value is read only once when an interface is added.</description_user>
             <type>uint16</type>
             <range_max>100</range_max><default>5</default>
             <nature>software</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiMLMEAPKeepAliveTimeoutCheck" psid="2486">
-            <description_user>DO NOT SET TO A VALUE HIGHER THAN THE TIMEOUT. How long before keepalive timeout to start polling, in seconds. </description_user>
+        <description_user>DO NOT SET TO A VALUE HIGHER THAN THE TIMEOUT. How long before keepalive timeout to start polling, in seconds.
+                    This value is read only once when an interface is added.</description_user>
             <type>uint16</type>
             <range_max>100</range_max><default>5</default>
             <nature>software</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiMLMEGOKeepAliveTimeoutCheck" psid="2487">
-            <description_user>DO NOT SET TO A VALUE HIGHER THAN THE TIMEOUT. How long before keepalive timeout to start polling, in seconds. </description_user>
+        <description_user>DO NOT SET TO A VALUE HIGHER THAN THE TIMEOUT. How long before keepalive timeout to start polling, in seconds.
+                   This value is read only once when an interface is added.</description_user>
             <type>uint16</type>
             <range_max>100</range_max><default>5</default>
             <nature>software</nature><module>mlme</module>
@@ -1726,19 +1757,21 @@
         </config_element>
         <config_element name="unifiMLMEStationInactivityTimeOut" psid="2098">
             <description_user>Timeout, in seconds, for instigating ConnectonFailure procedures. Setting it to less than 3 seconds may result in frequent disconnection or roaming with the AP.
-            Disable with Zero. Values lower than INACTIVITY_MINIMUM_TIMEOUT becomes INACTIVITY_MINIMUM_TIMEOUT.</description_user>
+            Disable with Zero. Values lower than INACTIVITY_MINIMUM_TIMEOUT becomes INACTIVITY_MINIMUM_TIMEOUT. This value is read only once when an interface is added.</description_user>
             <type>uint16</type>
             <default>3</default>
             <nature>software</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiMLMECliInactivityTimeOut" psid="2099">
-            <description_user>Timeout, in seconds, for instigating ConnectonFailure procedures. Zero value disables the feature. Any value written lower than INACTIVITY_MINIMUM_TIMEOUT becomes INACTIVITY_MINIMUM_TIMEOUT.</description_user>
+            <description_user>Timeout, in seconds, for instigating ConnectonFailure procedures. Zero value disables the feature. Any value written lower than INACTIVITY_MINIMUM_TIMEOUT
+            becomes INACTIVITY_MINIMUM_TIMEOUT. This value is read only once when an interface is added.</description_user>
             <type>uint16</type>
             <default>10</default>
             <nature>software</nature><module>mlme</module>
         </config_element>
         <config_element name="unifiMLMEStationInitialKickTimeOut" psid="2100">
-            <description_user>Golden Certification MIB don't delete, change PSID or name: Timeout, in milliseconds, for sending the AP a NULL frame to kick off the EAPOL exchange.</description_user>
+            <description_user>Golden Certification MIB don't delete, change PSID or name: Timeout, in milliseconds, for sending the AP a NULL frame to kick off the EAPOL exchange.
+            This value is read only once when an interface is added.</description_user>
             <type>uint16</type>
             <default>50</default>
             <nature>software</nature><module>mlme</module>
@@ -1839,6 +1872,12 @@
             <type>boolean</type>
             <default>false</default>
             <nature>software</nature><module>mlme</module>
+        </config_element>
+        <config_element name="unifiArpOutstandingMax" psid="2590">
+            <description_user>Maximum number of outstanding ARP frame transmissions in the firmware.</description_user>
+            <type>uint16</type>
+            <default>32</default>
+            <nature>software</nature><module>host</module>
         </config_element>
        <config_element name="unifiRttCapabilities" psid="5300">
            <description_user>RTT capabilities of the chip. see SC-506960-SW.</description_user>
@@ -5087,6 +5126,12 @@
            <default>false</default>
            <nature>software</nature><module>mlme</module>
         </config_element>
+        <config_element name="unifiSecuritySkipAllZeroesCheck" psid="2648">
+           <description_user>validate the installation of all keys zero in 4-way handshake. Disable the MIB while performing vulnerability certification.</description_user>
+           <type>boolean</type>
+           <default>true</default>
+           <nature>software</nature><module>mlme</module>
+        </config_element>
         <config_element name="dot11TDLSPeerUAPSDIndicationWindow" psid="53">
             <description_user>The minimum time after the last TPU SP, before a RAME_TPU_SP indication can be issued.</description_user>
             <type>uint16</type>
@@ -6397,6 +6442,17 @@
         </config_element>
         <config_element name="unifiACRetries" psid="2229">
             <description_user>It represents the number of retransmitted frames under each ac priority
+            (indexed by unifiAccessClassIndex). This number will wrap to zero after the range is exceeded.</description_user>
+            <access_rights>read_only</access_rights>
+            <type>uint32</type>
+            <table_name>unifiAcTxConfirmTable</table_name>
+            <function_list>
+                <function type="get" function_name="mibllsstatsget" is_for_vif="true"></function>
+            </function_list>
+            <nature>software</nature>
+        </config_element>
+        <config_element name="unifiACNoAcks" psid="2328">
+            <description_user>It represents the number of frames without ACK for each AC priority
             (indexed by unifiAccessClassIndex). This number will wrap to zero after the range is exceeded.</description_user>
             <access_rights>read_only</access_rights>
             <type>uint32</type>

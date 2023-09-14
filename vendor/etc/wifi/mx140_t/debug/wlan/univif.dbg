@@ -309,6 +309,7 @@ z  unifiChannelAnnouncementCount
 z  unifiRATestStoredSA
 z  unifiRATestStoreFrame
 z  dot11TDLSPeerUAPSDBufferSTAActivated
+z  unifiArpOutstandingMax
 z  unifiP2PLegacyProbeResponseActivated
 z  unifiProbeResponseLifetimeP2P
 z  unifiStaChannelSwitchSlowApActivated
@@ -318,6 +319,7 @@ z  unifiStaChannelSwitchSlowApProcedureTimeoutIncrement
 z  unifiMLMEScanMaxAerials
 z  unifiIncludePMKIDForPSK
 z  unifiRoamBSSCUTriggerFrequency
+z  unifiSecuritySkipAllZeroesCheck
 z  unifiAPFActivated
 z  unifiAPFVersion
 z  unifiAPFMaxSize
@@ -492,6 +494,7 @@ z  hutsReadWriteRemoteProcedureCallOctetString
 z  hutsReadWriteTableOctetStringRow
  p unifiACRetries
 z  unifiTxDataConfirm
+ p unifiACNoAcks
 z  unifiAgcThresholds
 z  unifiBaConfig
 z  unifiCCACSThresh

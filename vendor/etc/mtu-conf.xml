@@ -60,6 +60,41 @@ mtuTableEntry attributes:
 <!-- DT Greece -->
     <mtuTableEntry numeric="20201" mtu="1280" rat="4"/>
 
+<!-- DT Germany -->
+    <mtuTableEntry numeric="26201" mtu="1340" profile="2"/>
+    <mtuTableEntry numeric="26201" mtu="1280" rat="4"/>
+    <mtuTableEntry numeric="26206" mtu="1340" profile="2"/>
+    <mtuTableEntry numeric="26206" mtu="1280" rat="4"/>
+
+<!-- DT Austria -->
+    <mtuTableEntry numeric="23203" mtu="1280" rat="4"/>
+    <mtuTableEntry numeric="23207" mtu="1280" rat="4"/>
+
+<!-- DT Czech -->
+    <mtuTableEntry numeric="23001" mtu="1280" rat="4"/>
+
+<!-- DT Romania -->
+    <mtuTableEntry numeric="22603" mtu="1280" rat="4"/>
+    <mtuTableEntry numeric="22606" mtu="1280" rat="4"/>
+
+<!-- DT Poland -->
+    <mtuTableEntry numeric="26002" mtu="1280" rat="4"/>
+
+<!-- DT Hungary -->
+    <mtuTableEntry numeric="21630" mtu="1280" rat="4"/>
+
+<!-- DT Macedonia -->
+    <mtuTableEntry numeric="29401" mtu="1280" rat="4"/>
+
+<!-- DT Netherlands -->
+    <mtuTableEntry numeric="20416" mtu="1280" rat="4"/>
+
+<!-- DT Slovakia -->
+    <mtuTableEntry numeric="23102" mtu="1280" rat="4"/>
+
+<!-- DT Croatia -->
+    <mtuTableEntry numeric="21901" mtu="1280" rat="4"/>
+
 <!-- Vodafone Greece -->
     <mtuTableEntry numeric="20205" mtu="1390" rat="4"/>
 
@@ -106,6 +141,9 @@ mtuTableEntry attributes:
     <mtuTableEntry numeric="21407" mtu="1440" profile="14"/>
     <mtuTableEntry numeric="21407" mtu="1280" rat="4"/>
 
+<!-- Elisa Estonia -->
+    <mtuTableEntry numeric="24802" mtu="1280" profile="2"/>
+
 <!-- Digi Mobil Hungary -->
     <mtuTableEntry numeric="21603" mtu="1400" profile="2"/>
 
@@ -129,10 +167,6 @@ mtuTableEntry attributes:
 
 <!-- Salt -->
     <mtuTableEntry numeric="22803" mtu="1280" profile="2"/>
-
-<!-- T-Mobile A -->
-    <mtuTableEntry numeric="23203" mtu="1280" rat="4"/>
-    <mtuTableEntry numeric="23207" mtu="1280" rat="4"/>
 
 <!-- Hutchison -->
     <mtuTableEntry numeric="23205" mtu="1280" rat="4"/>
@@ -215,12 +249,6 @@ mtuTableEntry attributes:
 
 <!-- PLAY -->
     <mtuTableEntry numeric="26006" mtu="1280" rat="4"/>
-
-<!-- DT -->
-    <mtuTableEntry numeric="26201" mtu="1340" profile="2"/>
-    <mtuTableEntry numeric="26201" mtu="1340" rat="4"/>
-    <mtuTableEntry numeric="26206" mtu="1340" profile="2"/>
-    <mtuTableEntry numeric="26206" mtu="1340" rat="4"/>
 
 <!-- VF DE -->
     <mtuTableEntry numeric="26202" mtu="1280" profile="2"/>
@@ -359,9 +387,6 @@ mtuTableEntry attributes:
     <mtuTableEntry numeric="37002" mtu="1300" proto="1"/>
     <mtuTableEntry numeric="37002" mtu="1280" proto="2"/>
 
-<!-- BTC Bahamas -->
-    <mtuTableEntry numeric="36439" mtu="1280"/>
-
 <!-- RJIL -->
     <mtuTableEntry numeric="40578" mtu="1280" rat="4"/>
     <mtuTableEntry numeric="40587" mtu="1280" rat="4"/>
@@ -496,6 +521,7 @@ mtuTableEntry attributes:
     <mtuTableEntry numeric="46011" mtu="1460"/>
     <mtuTableEntry numeric="46012" mtu="1432" profile="2"/>
     <mtuTableEntry numeric="46012" mtu="1460"/>
+    <mtuTableEntry numeric="46015" mtu="1400"/>
 
 <!--  Malaysia Digi -->
     <mtuTableEntry numeric="50216" mtu="1280" profile="2"/>
@@ -609,9 +635,6 @@ mtuTableEntry attributes:
 <!-- Claro Uruguay -->
     <mtuTableEntry numeric="74810" mtu="1280" profile="2"/>
     <mtuTableEntry numeric="74810" mtu="1280" rat="4"/>
-
-<!-- HT HR iwlan -->
-    <mtuTableEntry numeric="21901" mtu="1280" rat="4"/>
 
 <!-- Danish 3DK -->
     <mtuTableEntry numeric="23806" mtu="1300" profile="2"/>

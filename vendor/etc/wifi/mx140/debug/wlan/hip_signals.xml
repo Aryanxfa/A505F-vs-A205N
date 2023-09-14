@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="SamsungWifiHip.xsl"?>
-<!-- Copyright Samsung Electronics Co. Limited 2021. All Rights Reserved. -->
+<!-- Copyright Samsung Electronics Co. Limited 2022. All Rights Reserved. -->
 <!-- WARNING! Do not directly edit this file. -->
-<!-- This file was generated on 2021-11-15 11:53 by merge_saps.py version 1.6.1 -->
+<!-- This file was generated on 2022-10-27 14:11 by merge_saps.py version 1.6.1 -->
 <!-- Field name backward compatibility=True -->
 <!-- Data_References instead of firmware_references=False -->
 <!-- Add additional type definitions=False -->
 <!-- Add spare fields=False -->
 <!-- Add spare signals=False -->
-<!-- Included FILE resource '/var/jenkins/csi.fw_release_helper_JUL19/build/fw/wlan/mac/../common/hostio/hip_fapi_control_sap.xml' in '/var/jenkins/csi.fw_release_helper_JUL19/build/fw/wlan/mac/../common/hostio/hip_fapi_all_saps.xml' -->
-<!-- Included FILE resource '/var/jenkins/csi.fw_release_helper_JUL19/build/fw/wlan/mac/../common/hostio/hip_fapi_data_sap.xml' in '/var/jenkins/csi.fw_release_helper_JUL19/build/fw/wlan/mac/../common/hostio/hip_fapi_all_saps.xml' -->
-<!-- Included FILE resource '/var/jenkins/csi.fw_release_helper_JUL19/build/fw/wlan/mac/../common/hostio/hip_fapi_debug_sap.xml' in '/var/jenkins/csi.fw_release_helper_JUL19/build/fw/wlan/mac/../common/hostio/hip_fapi_all_saps.xml' -->
-<!-- Included FILE resource '/var/jenkins/csi.fw_release_helper_JUL19/build/fw/wlan/mac/../common/hostio/hip_fapi_test_sap.xml' in '/var/jenkins/csi.fw_release_helper_JUL19/build/fw/wlan/mac/../common/hostio/hip_fapi_all_saps.xml' -->
-<!-- Included FILE resource '/var/jenkins/csi.fw_release_helper_JUL19/build/fw/wlan/mac/../common/hostio/hip_fapi_types.xml' in '/var/jenkins/csi.fw_release_helper_JUL19/build/fw/wlan/mac/../common/hostio/hip_fapi_test_sap.xml' -->
-<!-- Included FILE resource '/var/jenkins/csi.fw_release_helper_JUL19/build/fw/wlan/mac/../common/hostio/hip_fapi_types.xml' in '/var/jenkins/csi.fw_release_helper_JUL19/build/fw/wlan/mac/../common/hostio/hip_fapi_debug_sap.xml' -->
-<!-- Included FILE resource '/var/jenkins/csi.fw_release_helper_JUL19/build/fw/wlan/mac/../common/hostio/hip_fapi_types.xml' in '/var/jenkins/csi.fw_release_helper_JUL19/build/fw/wlan/mac/../common/hostio/hip_fapi_data_sap.xml' -->
-<!-- Included FILE resource '/var/jenkins/csi.fw_release_helper_JUL19/build/fw/wlan/mac/../common/hostio/hip_fapi_types.xml' in '/var/jenkins/csi.fw_release_helper_JUL19/build/fw/wlan/mac/../common/hostio/hip_fapi_control_sap.xml' -->
+<!-- Included FILE resource '/var/jenkins/firmware_release_helper.2022.BP/build/fw/wlan/mac/../common/hostio/hip_fapi_control_sap.xml' in '/var/jenkins/firmware_release_helper.2022.BP/build/fw/wlan/mac/../common/hostio/hip_fapi_all_saps.xml' -->
+<!-- Included FILE resource '/var/jenkins/firmware_release_helper.2022.BP/build/fw/wlan/mac/../common/hostio/hip_fapi_data_sap.xml' in '/var/jenkins/firmware_release_helper.2022.BP/build/fw/wlan/mac/../common/hostio/hip_fapi_all_saps.xml' -->
+<!-- Included FILE resource '/var/jenkins/firmware_release_helper.2022.BP/build/fw/wlan/mac/../common/hostio/hip_fapi_debug_sap.xml' in '/var/jenkins/firmware_release_helper.2022.BP/build/fw/wlan/mac/../common/hostio/hip_fapi_all_saps.xml' -->
+<!-- Included FILE resource '/var/jenkins/firmware_release_helper.2022.BP/build/fw/wlan/mac/../common/hostio/hip_fapi_test_sap.xml' in '/var/jenkins/firmware_release_helper.2022.BP/build/fw/wlan/mac/../common/hostio/hip_fapi_all_saps.xml' -->
+<!-- Included FILE resource '/var/jenkins/firmware_release_helper.2022.BP/build/fw/wlan/mac/../common/hostio/hip_fapi_types.xml' in '/var/jenkins/firmware_release_helper.2022.BP/build/fw/wlan/mac/../common/hostio/hip_fapi_test_sap.xml' -->
+<!-- Included FILE resource '/var/jenkins/firmware_release_helper.2022.BP/build/fw/wlan/mac/../common/hostio/hip_fapi_types.xml' in '/var/jenkins/firmware_release_helper.2022.BP/build/fw/wlan/mac/../common/hostio/hip_fapi_debug_sap.xml' -->
+<!-- Included FILE resource '/var/jenkins/firmware_release_helper.2022.BP/build/fw/wlan/mac/../common/hostio/hip_fapi_types.xml' in '/var/jenkins/firmware_release_helper.2022.BP/build/fw/wlan/mac/../common/hostio/hip_fapi_data_sap.xml' -->
+<!-- Included FILE resource '/var/jenkins/firmware_release_helper.2022.BP/build/fw/wlan/mac/../common/hostio/hip_fapi_types.xml' in '/var/jenkins/firmware_release_helper.2022.BP/build/fw/wlan/mac/../common/hostio/hip_fapi_control_sap.xml' -->
 <definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./hip.xsd">
    <resource name="CONST"/>
    <resource name="FILE"/>
    <resource name="HEADER"/>
    <resource name="INCLUDE"/>
    <resource name="PRIMITIVE"/>
-   <resource data_ref="true" discriminant="Signal_Id" name="SIGNAL" spare="true"/>
+   <resource discriminant="Signal_Id" name="SIGNAL"/>
    <resource name="TYPE"/>
    <type name="ACL_Policy" resource="TYPE" size="16">
       <value name="BlackList" value="0x0000"/>
@@ -6218,6 +6218,7 @@
       <value name="Deauthenticated_no_more_stations" value="0x0005"/>
       <value name="Deauthenticated_invalid_class_2_frame" value="0x0006"/>
       <value name="Deauthenticated_invalid_class_3_frame" value="0x0007"/>
+      <value name="Disassociated_Leaving" value="0x0008"/>
       <value name="Deauthenticated_Reason_invalid_IE" value="0x000d"/>
       <value name="Deauthenticated_4_Way_Handshake_Timeout" value="0x000f"/>
       <value name="Deauthenticated_Group_ Handshake_Timeout" value="0x0010"/>
@@ -8071,14 +8072,14 @@
       <value name="Auth_EAPOL" value="0x0400"/>
    </type>
    <type name="hipVersions" resource="CONST" size="16">
-      <value name="TEST_SAP_VERSION" value="0x0e00"/>
-      <value name="TEST_SAP_ENG_VERSION" value="0x0013"/>
-      <value name="DATA_SAP_VERSION" value="0x0e01"/>
-      <value name="DATA_SAP_ENG_VERSION" value="0x0001"/>
       <value name="DEBUG_SAP_VERSION" value="0x0d03"/>
       <value name="DEBUG_SAP_ENG_VERSION" value="0x0001"/>
+      <value name="TEST_SAP_VERSION" value="0x0e00"/>
+      <value name="TEST_SAP_ENG_VERSION" value="0x0013"/>
       <value name="CONTROL_SAP_VERSION" value="0x0e07"/>
       <value name="CONTROL_SAP_ENG_VERSION" value="0x000d"/>
+      <value name="DATA_SAP_VERSION" value="0x0e01"/>
+      <value name="DATA_SAP_ENG_VERSION" value="0x0001"/>
    </type>
    <type name="int16" resource="TYPE" signed="true" size="16"/>
    <type name="int32" resource="TYPE" signed="true" size="32"/>

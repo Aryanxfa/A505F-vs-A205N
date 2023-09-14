@@ -309,6 +309,7 @@
 0 unifiRATestStoredSA
 0 unifiRATestStoreFrame
 0 dot11TDLSPeerUAPSDBufferSTAActivated
+0 unifiArpOutstandingMax
 0 unifiP2PLegacyProbeResponseActivated
 0 unifiProbeResponseLifetimeP2P
 0 unifiStaChannelSwitchSlowApActivated
@@ -318,6 +319,7 @@
 0 unifiMLMEScanMaxAerials
 0 unifiIncludePMKIDForPSK
 0 unifiRoamBSSCUTriggerFrequency
+0 unifiSecuritySkipAllZeroesCheck
 0 unifiAPFActivated
 0 unifiAPFVersion
 0 unifiAPFMaxSize
@@ -492,6 +494,7 @@
 1 hutsReadWriteTableOctetStringRow
 1 unifiACRetries
 1 unifiTxDataConfirm
+1 unifiACNoAcks
 1 unifiAgcThresholds
 1 unifiBaConfig
 1 unifiCCACSThresh

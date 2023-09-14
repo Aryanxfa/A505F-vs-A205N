@@ -10,9 +10,10 @@
         manifest.xml
         skeymaster_v4_manifest.xml
         manifest.xml
-        radio_manifest_ds.xml
-        radio_manifest_ds.xml
+        radio_manifest_ss.xml
+        radio_manifest_ss.xml
         manifest_chip.xml
+        manifest.xml
         manifest.xml
         manifest.xml
         manifest.xml
@@ -197,9 +198,7 @@
         <name>android.hardware.radio</name>
         <transport>hwbinder</transport>
         <fqname>@1.2::ISap/slot1</fqname>
-        <fqname>@1.2::ISap/slot2</fqname>
         <fqname>@1.4::IRadio/slot1</fqname>
-        <fqname>@1.4::IRadio/slot2</fqname>
     </hal>
     <hal format="hidl" override="true">
         <name>android.hardware.radio.config</name>
@@ -317,10 +316,6 @@
         </interface>
         <fqname>@2.0::ISehMiscPower/default</fqname>
     </hal>
-    <hal format="hidl" override="true">
-        <name>vendor.samsung.hardware.radio</name>
-        <transport>hwbinder</transport>
-    </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.radio</name>
         <transport>hwbinder</transport>
@@ -328,14 +323,8 @@
         <interface>
             <name>ISehRadio</name>
             <instance>slot1</instance>
-            <instance>slot2</instance>
         </interface>
         <fqname>@2.1::ISehRadio/slot1</fqname>
-        <fqname>@2.1::ISehRadio/slot2</fqname>
-    </hal>
-    <hal format="hidl" override="true">
-        <name>vendor.samsung.hardware.radio.bridge</name>
-        <transport>hwbinder</transport>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.radio.bridge</name>
@@ -344,14 +333,8 @@
         <interface>
             <name>ISehBridge</name>
             <instance>slot1</instance>
-            <instance>slot2</instance>
         </interface>
         <fqname>@2.0::ISehBridge/slot1</fqname>
-        <fqname>@2.0::ISehBridge/slot2</fqname>
-    </hal>
-    <hal format="hidl" override="true">
-        <name>vendor.samsung.hardware.radio.channel</name>
-        <transport>hwbinder</transport>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.radio.channel</name>
@@ -360,14 +343,10 @@
         <interface>
             <name>ISehChannel</name>
             <instance>epdgd</instance>
-            <instance>epdgd2</instance>
             <instance>imsd</instance>
-            <instance>imsd2</instance>
         </interface>
         <fqname>@2.0::ISehChannel/epdgd</fqname>
-        <fqname>@2.0::ISehChannel/epdgd2</fqname>
         <fqname>@2.0::ISehChannel/imsd</fqname>
-        <fqname>@2.0::ISehChannel/imsd2</fqname>
     </hal>
     <hal format="hidl" override="true">
         <name>vendor.samsung.hardware.security.drk</name>
@@ -438,6 +417,16 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.1::ISehSysInputDev/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.samsung.hardware.tdmb</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
+        <interface>
+            <name>ISehTdmbTuner</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@2.0::ISehTdmbTuner/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.tlc.payment</name>

@@ -805,6 +805,7 @@ on property:ro.debuggable=1
     write /sys/module/kgdboc/parameters/kgdboc ttyFIQ1
     write /sys/module/fiq_debugger/parameters/kgdb_enable 1
 
+# LPM
 on property:ro.bootmode=charger
     wait /dev/block/platform/13520000.ufs/by-name/sec_efs
     mount ext4 /dev/block/platform/13520000.ufs/by-name/sec_efs /efs nosuid nodev noatime noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic
@@ -815,6 +816,7 @@ on property:ro.bootmode=charger
     chown system system /efs/usb_hw_param/usb_hw_param.log
     chmod 0660 /efs/usb_hw_param/usb_hw_param.log
     mkdir /efs/lpm 0775 system system
+    trigger firmware_mounts_complete
     class_start sec-charger
 
 # Sysscope
@@ -857,7 +859,7 @@ service iprenew_bt-pan /vendor/bin/dhcpcd -n
         oneshot
 
 # SSWAP
-service swapon /system/bin/sswap -s -z -f 2560
+service swapon /system/bin/sswap -s -z -f 2048
     class core
     user system
     group system
